@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="比較 QQQ、00662、009800 對 Nasdaq-100 的報酬、追蹤差距與追蹤誤差。">
+  <title>NDXL｜Nasdaq-100 追蹤儀表板</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="NDXL 首頁">
+      <span class="brand-mark">N</span>
+      <span><strong>NDXL</strong><small>Nasdaq-100 Long Horizon</small></span>
+    </a>
+    <nav>
+      <a href="#overview">總覽</a>
+      <a href="#comparison">追蹤比較</a>
+      <a href="#method">計算口徑</a>
+    </nav>
+    <span id="statusBadge" class="status waiting">等待首次更新</span>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="overview">
+      <div>
+        <p class="eyebrow">FOCUSED NASDAQ-100 TRACKER</p>
+        <h1>哪個產品，<br>最貼近 Nasdaq-100？</h1>
+        <p class="hero-copy">以相同報酬口徑比較 QQQ、00662、009800，分開呈現追蹤差距與追蹤誤差，避免把匯率或單次落後誤判成追蹤不穩。</p>
+        <div class="periods" id="periodButtons" aria-label="比較期間"></div>
+      </div>
+      <aside class="winner-card">
+        <span>目前追蹤品質最佳</span>
+        <strong id="winnerSymbol">—</strong>
+        <p id="winnerReason">等待 GitHub Actions 取得每日資料</p>
+        <dl>
+          <div><dt>資料截至</dt><dd id="asOf">—</dd></div>
+          <div><dt>追蹤分數</dt><dd id="winnerScore">—</dd></div>
+        </dl>
+      </aside>
+    </section>
+
+    <section class="cards" id="summaryCards" aria-live="polite"></section>
+
+    <section class="panel chart-panel">
+      <div class="panel-heading">
+        <div><p class="eyebrow">NORMALIZED PERFORMANCE</p><h2>近一年標準化走勢</h2></div>
+        <p>各序列起點設為 100，方便觀察相對表現；台幣與美元基準分開用於追蹤計算。</p>
+      </div>
+      <canvas id="performanceChart" width="1200" height="430" aria-label="標準化績效折線圖"></canvas>
+      <div id="legend" class="legend"></div>
+    </section>
+
+    <section class="panel" id="comparison">
+      <div class="panel-heading">
+        <div><p class="eyebrow">TRACKING QUALITY</p><h2>報酬與追蹤品質</h2></div>
+        <p>「差距」看最後落後多少；「誤差」看每日跟隨是否穩定。</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>產品</th><th>產品報酬</th><th>基準報酬</th><th>追蹤差距</th><th>年化追蹤誤差</th><th>分數</th><th>樣本日</th></tr></thead>
+          <tbody id="comparisonBody"><tr><td colspan="7" class="empty">等待首次資料更新</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="method-grid" id="method">
+      <article><span>01</span><h3>幣別一致</h3><p>QQQ 對美元 Nasdaq-100 含息基準；00662、009800 對換算新台幣後的基準。</p></article>
+      <article><span>02</span><h3>追蹤差距</h3><p>產品期間報酬減去基準期間報酬，回答這段時間最後落後或領先多少。</p></article>
+      <article><span>03</span><h3>追蹤誤差</h3><p>每日超額報酬的年化標準差，回答產品每天跟隨基準的穩定程度。</p></article>
+    </section>
+
+    <section class="disclaimer">
+      <strong>資料說明</strong>
+      <p id="sourceNote">尚未取得資料。本站為研究工具，不構成投資建議；資料需與 Nasdaq、基金公司及交易所官方資訊交叉核對。</p>
+    </section>
+  </main>
+
+  <footer>NDXL · 專注 Nasdaq-100 與相關追蹤產品</footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

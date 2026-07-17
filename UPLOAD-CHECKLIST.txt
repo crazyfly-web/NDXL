@@ -1,0 +1,9 @@
+NDXL v2 上傳檢查
+
+[ ] GitHub 根目錄有 index.html
+[ ] GitHub 根目錄有 app.js 與 styles.css
+[ ] GitHub 根目錄有 data 與 scripts 資料夾
+[ ] 最重要：GitHub 根目錄有 .github/workflows/update-tracking.yml
+[ ] Settings → Actions → General 已選 Read and write permissions
+[ ] Actions 分頁看得到 Update Nasdaq-100 tracking data
+[ ] 第一次手動 Run workflow 已出現綠色勾勾

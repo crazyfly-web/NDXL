@@ -1,0 +1,14 @@
+{
+  "status": "waiting",
+  "generatedAt": null,
+  "asOf": null,
+  "source": {
+    "name": "Waiting for the first GitHub Actions run",
+    "official": false,
+    "note": "請到 Actions 手動執行 Update Nasdaq-100 tracking data。"
+  },
+  "methodology": {},
+  "periods": {},
+  "chart": {},
+  "errors": {}
+}
